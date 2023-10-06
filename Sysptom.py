@@ -19,11 +19,11 @@ class ManageSymptomTest(unittest.TestCase):
     def test_ManageSymptom_in_Q_Online(self):
         # Open the web application
         self.driver.get("https://online-web-mauve.vercel.app/")
-        
+        # คลิกปุ่ม "เข้าสู่ระบบ"
         open_modal_button = self.driver.find_element(By.ID, "loginNavbar")
         open_modal_button.click()
      
-
+        # ระบุ element ของรหัสประจำตัวประชาชนและรหัสผ่านใน Modal
         id_input = self.driver.find_element(By.ID, "LoginID_Card")
         password_input = self.driver.find_element(By.ID, "LoginPassword")
 
@@ -49,7 +49,7 @@ class ManageSymptomTest(unittest.TestCase):
 
         input_element = self.driver.find_element(By.ID, "Editsymptom")
         input_element.clear()
-        input_element.send_keys('แก้มบวม ปวดฟัน ')
+        input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ')
         time.sleep(5)
 
         # ค้นหาอิลิเมนต์ button โดยใช้ attribute type="submit"
@@ -89,7 +89,6 @@ class ManageSymptomTest(unittest.TestCase):
         button.click()
         time.sleep(5)
 
-        input_element = self.driver.find_element(By.ID, "Editsymptom")
         input_element = self.driver.find_element(By.ID, "Editsymptom")
         input_element.send_keys(Keys.BACK_SPACE * len(input_element.get_attribute("value")))
         time.sleep(5)
