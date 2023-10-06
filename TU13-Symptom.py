@@ -59,7 +59,7 @@ class ManageSymptomTest(unittest.TestCase):
         button_element.click()
         time.sleep(2)
 
-    def test_search_in_google2(self):
+    def test_ManageSymptom_in_Q_Online2(self):
 
         self.driver.get("https://online-web-mauve.vercel.app/")
 
