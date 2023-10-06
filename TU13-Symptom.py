@@ -52,7 +52,7 @@ class ManageSymptomTest(unittest.TestCase):
         input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ เจ็บปาก')
         time.sleep(5)
 
-        # ค้นหาอิลิเมนต์ button โดยใช้ attribute type="submit"
+        # คลิกปุ่ม
         button_element = self.driver.find_element(By.ID, "QSubmit")
 
         # คลิกปุ่ม
