@@ -49,7 +49,7 @@ class ManageSymptomTest(unittest.TestCase):
 
         input_element = self.driver.find_element(By.ID, "Editsymptom")
         input_element.clear()
-        input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ')
+        input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ เจ็บปาก')
         time.sleep(5)
 
         # ค้นหาอิลิเมนต์ button โดยใช้ attribute type="submit"
