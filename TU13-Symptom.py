@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 import time
 import unittest
+from selenium.webdriver.support.ui import Select
 
 class ManageSymptomTest(unittest.TestCase):
 
@@ -19,6 +20,7 @@ class ManageSymptomTest(unittest.TestCase):
     def test_ManageSymptom_in_Q_Online(self):
         # Open the web application
         self.driver.get("https://online-web-mauve.vercel.app/")
+        time.sleep(5)
         # คลิกปุ่ม "เข้าสู่ระบบ"
         open_modal_button = self.driver.find_element(By.ID, "loginNavbar")
         open_modal_button.click()
@@ -43,13 +45,34 @@ class ManageSymptomTest(unittest.TestCase):
         icon = self.driver.find_element(By.ID, 'Home-Queue')
         icon.click()
         time.sleep(5)
+       
+
+        # Click the date input field (คลิกที่ input ประเภทวันที่)
+        date_input = self.driver.find_element(By.ID, "TableBookDate")
+
+        # Set the date to your desired date (ตั้งค่าวันที่ตามที่คุณต้องการ)
+        date_input.clear()
+        date_input.send_keys("10-14-2023")  
+        # รอ 5 วินาที (หรือตามที่คุณต้องการ)
+        time.sleep(4)
+
+
+         # Select the department from the dropdown (เลือกแผนกจาก dropdown)
+        department_dropdown = Select(self.driver.find_element(By.ID, "TableBookselectedDepartment"))
+        department_dropdown.select_by_visible_text("ทันตกรรม")
+        # รอ 5 วินาที (หรือตามที่คุณต้องการ)
+        time.sleep(4)
+       
+       
+       
+       
         button = self.driver.find_element(By.ID, 'EditQueue')
         button.click()
         time.sleep(5)
 
         input_element = self.driver.find_element(By.ID, "Editsymptom")
         input_element.clear()
-        input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ เจ็บปาก')
+        input_element.send_keys('แก้มบวม ปวดฟันมาก ๆ ')
         time.sleep(5)
 
         # คลิกปุ่ม
@@ -85,6 +108,22 @@ class ManageSymptomTest(unittest.TestCase):
         icon = self.driver.find_element(By.ID, 'Home-Queue')
         icon.click()
         time.sleep(5)
+        # Click the date input field (คลิกที่ input ประเภทวันที่)
+        date_input = self.driver.find_element(By.ID, "TableBookDate")
+
+        # Set the date to your desired date (ตั้งค่าวันที่ตามที่คุณต้องการ)
+        date_input.clear()
+        date_input.send_keys("10-14-2023")  
+        # รอ 5 วินาที (หรือตามที่คุณต้องการ)
+        time.sleep(4)
+
+
+         # Select the department from the dropdown (เลือกแผนกจาก dropdown)
+        department_dropdown = Select(self.driver.find_element(By.ID, "TableBookselectedDepartment"))
+        department_dropdown.select_by_visible_text("ทันตกรรม")
+        # รอ 5 วินาที (หรือตามที่คุณต้องการ)
+        time.sleep(4)
+       
         button = self.driver.find_element(By.ID, 'EditQueue')
         button.click()
         time.sleep(5)
